@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JarwisService } from '../../../services/jarwis.service';
-import { SnotifyModule } from 'ng-snotify';
+import { SnotifyService } from 'ng-snotify';
 
 @Component({
   selector: 'app-request-reset',
@@ -14,7 +14,7 @@ export class RequestResetComponent implements OnInit {
 
   constructor(
     private Jarwis: JarwisService,
-    private notify: SnotifyModule
+    private notify: SnotifyService
   ) { }
 
   ngOnInit() {
@@ -28,6 +28,7 @@ export class RequestResetComponent implements OnInit {
   }
 
   handleResponse(res) {
+    console.log(res);
     this.form.email = null;
   }
 }
